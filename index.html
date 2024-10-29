@@ -17,9 +17,11 @@
             background: #0a0a0a;
             color: #f0f0f0;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
@@ -32,6 +34,7 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            padding: 20px;
         }
 
         .void-circle {
@@ -50,18 +53,19 @@
         }
 
         .site-title {
-            font-size: 4em;
-            letter-spacing: 15px;
+            font-size: clamp(2em, 8vw, 4em);
+            letter-spacing: clamp(5px, 2vw, 15px);
             text-transform: uppercase;
             color: #ffffff20;
             text-align: center;
             z-index: 1;
+            padding: 0 15px;
         }
 
         .site-title span {
             display: block;
-            font-size: 0.3em;
-            letter-spacing: 5px;
+            font-size: clamp(0.3em, 3vw, 0.4em);
+            letter-spacing: clamp(2px, 1vw, 5px);
             margin-top: 20px;
             color: #ffffff40;
         }
@@ -70,60 +74,133 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 50px 0;
+            padding: clamp(30px, 5vh, 50px) 0;
         }
 
         .quote {
-            font-size: 1.8em;
+            font-size: clamp(1.2em, 4vw, 1.8em);
             text-align: center;
             color: #ffffff30;
-            margin: 40px 0;
+            margin: clamp(20px, 5vh, 40px) 0;
             font-style: italic;
+            padding: 0 15px;
         }
 
         .philosophy {
             background: #ffffff05;
-            padding: 40px;
+            padding: clamp(20px, 5vw, 40px);
             border-radius: 10px;
-            margin: 20px 0;
+            margin: clamp(15px, 3vh, 20px) 0;
         }
 
         .philosophy h2 {
             color: #ffffff50;
-            margin-bottom: 20px;
-            font-size: 2em;
+            margin-bottom: clamp(15px, 3vh, 20px);
+            font-size: clamp(1.5em, 5vw, 2em);
         }
 
         .philosophy p {
             color: #ffffff70;
-            margin-bottom: 20px;
-            font-size: 1.1em;
+            margin-bottom: clamp(15px, 3vh, 20px);
+            font-size: clamp(1em, 3vw, 1.1em);
         }
 
         footer {
             text-align: center;
-            padding: 40px 0;
+            padding: clamp(20px, 5vh, 40px) 0;
             color: #ffffff20;
         }
 
         .nav-dots {
             position: fixed;
-            right: 30px;
+            right: clamp(10px, 3vw, 30px);
             top: 50%;
             transform: translateY(-50%);
+            z-index: 100;
         }
 
         .dot {
-            width: 10px;
-            height: 10px;
+            width: clamp(6px, 1.5vw, 10px);
+            height: clamp(6px, 1.5vw, 10px);
             background: #ffffff20;
             border-radius: 50%;
-            margin: 10px 0;
+            margin: clamp(8px, 2vh, 10px) 0;
             cursor: pointer;
         }
 
         .dot:hover {
             background: #ffffff50;
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .void-circle {
+                width: 200px;
+                height: 200px;
+            }
+
+            .container {
+                width: 95%;
+                padding: 10px;
+            }
+
+            .philosophy {
+                margin: 15px 0;
+                padding: 20px;
+            }
+
+            .nav-dots {
+                right: 10px;
+            }
+
+            section {
+                padding: 30px 0;
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            .void-circle {
+                width: 150px;
+                height: 150px;
+            }
+
+            .philosophy {
+                padding: 15px;
+            }
+
+            .nav-dots {
+                right: 5px;
+            }
+
+            .dot {
+                width: 6px;
+                height: 6px;
+                margin: 6px 0;
+            }
+        }
+
+        /* Landscape mode adjustments */
+        @media (max-height: 500px) and (orientation: landscape) {
+            header {
+                height: auto;
+                min-height: 100vh;
+                padding: 40px 20px;
+            }
+
+            .void-circle {
+                width: 120px;
+                height: 120px;
+            }
+
+            .site-title {
+                font-size: clamp(1.5em, 6vw, 3em);
+            }
+
+            section {
+                min-height: auto;
+                padding: 20px 0;
+            }
         }
     </style>
 </head>
