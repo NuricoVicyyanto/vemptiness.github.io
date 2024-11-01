@@ -70,6 +70,20 @@
             color: #ffffff40;
         }
 
+        .tally-marks {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+            padding: 20px;
+            background: #ffffff05;
+            border-radius: 10px;
+        }
+
+        .tally-marks svg {
+            max-width: 400px;
+            height: auto;
+        }
+
         section {
             min-height: 100vh;
             display: flex;
@@ -132,74 +146,24 @@
             background: #ffffff50;
         }
 
-        /* Mobile-specific styles */
         @media (max-width: 768px) {
             .void-circle {
                 width: 200px;
                 height: 200px;
             }
-
             .container {
                 width: 95%;
                 padding: 10px;
             }
-
             .philosophy {
                 margin: 15px 0;
                 padding: 20px;
             }
-
             .nav-dots {
                 right: 10px;
             }
-
             section {
                 padding: 30px 0;
-            }
-        }
-
-        /* Small mobile devices */
-        @media (max-width: 480px) {
-            .void-circle {
-                width: 150px;
-                height: 150px;
-            }
-
-            .philosophy {
-                padding: 15px;
-            }
-
-            .nav-dots {
-                right: 5px;
-            }
-
-            .dot {
-                width: 6px;
-                height: 6px;
-                margin: 6px 0;
-            }
-        }
-
-        /* Landscape mode adjustments */
-        @media (max-height: 500px) and (orientation: landscape) {
-            header {
-                height: auto;
-                min-height: 100vh;
-                padding: 40px 20px;
-            }
-
-            .void-circle {
-                width: 120px;
-                height: 120px;
-            }
-
-            .site-title {
-                font-size: clamp(1.5em, 6vw, 3em);
-            }
-
-            section {
-                min-height: auto;
-                padding: 20px 0;
             }
         }
     </style>
@@ -216,6 +180,22 @@
     <div class="container">
         <section>
             <div>
+                <div class="tally-marks">
+                    <svg viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+                        <!-- First group of 5 -->
+                        <line x1="50" y1="20" x2="50" y2="80" stroke="#ffffff40" stroke-width="2"/>
+                        <line x1="70" y1="20" x2="70" y2="80" stroke="#ffffff40" stroke-width="2"/>
+                        <line x1="90" y1="20" x2="90" y2="80" stroke="#ffffff40" stroke-width="2"/>
+                        <line x1="110" y1="20" x2="110" y2="80" stroke="#ffffff40" stroke-width="2"/>
+                        <line x1="40" y1="50" x2="120" y2="50" stroke="#ffffff40" stroke-width="2"/>
+                        
+                        <!-- Second group of 3 -->
+                        <line x1="160" y1="20" x2="160" y2="80" stroke="#ffffff40" stroke-width="2"/>
+                        <line x1="180" y1="20" x2="180" y2="80" stroke="#ffffff40" stroke-width="2"/>
+                        <line x1="200" y1="20" x2="200" y2="80" stroke="#ffffff40" stroke-width="2"/>
+                    </svg>
+                </div>
+
                 <div class="quote">
                     "In emptiness, we find the essence of all things."
                 </div>
